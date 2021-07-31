@@ -1,0 +1,206 @@
+<head>
+		<script>
+			document.title='${title}'
+		</script>
+		<link rel="stylesheet" type="text/css" href="/pages/css/modern-normalize.css">
+		<link rel="stylesheet" type="text/css" href="/pages/css/global.css">
+    		<link rel="stylesheet" type="text/css" href="/pages/css/swf.css">
+		<style>
+			body {
+				background: #eee;
+			}
+		</style>
+	</head>
+	
+	<header id="header">
+		<a href="/">
+			<h1 style="margin:0"><img id="logo" src="/pages/img/list_logo.png" alt="Wrapper Offline For Schools Remastered"/></h1>
+		</a>
+		<nav id="headbuttons">
+			<div class="dropdown_contain button_small">
+				<div class="dropdown_button upload_button">UPLOAD</div>
+				<nav class="dropdown_menu">
+					<a onclick="document.getElementById('file').click()">Movie</a>
+					<a onclick="document.getElementById('file2').click()">Character</a>
+				</nav>
+			</div>	
+			<div class="dropdown_contain button_small">
+				<div class="dropdown_button">CREATE A CHARACTER</div>
+				<nav class="dropdown_menu">
+					<h2>Comedy World</h2>
+					<a href="/cc?themeId=family&bs=adam">Guy (Adam)</a>
+					<a href="/cc?themeId=family&bs=eve">Girl (Eve)</a>
+					<a href="/cc?themeId=family&bs=bob">Fat (Bob)</a>
+					<a href="/cc?themeId=family&bs=rocky">Buff (Rocky)</a>
+					<hr />
+					<h2>Anime</h2>
+					<a href="/cc?themeId=anime&bs=guy">Guy</a>
+					<a href="/cc?themeId=anime&bs=girl">Girl</a>
+					<a href="/cc?themeId=ninjaanime&bs=guy">Guy (Ninja)</a>
+					<a href="/cc?themeId=ninjaanime&bs=girl">Girl (Ninja)</a>
+					<hr />
+					<h2>Peepz</h2>
+					<a href="/cc?themeId=cc2&bs=default">Lil Peepz</a>
+					<a href="/cc?themeId=chibi&bs=default">Chibi Peepz</a>
+					<a href="/cc?themeId=ninja&bs=default">Chibi Ninjas</a>
+				</nav>
+			</div>
+			<div class="dropdown_contain button_small">
+				<div class="dropdown_button">BROWSE CHARACTERS</div>
+				<nav class="dropdown_menu">
+					<h2>Comedy World</h2>
+					<a href="/cc_browser?themeId=family">Comedy World</a>
+					<hr />
+					<h2>Anime</h2>
+					<a href="/cc_browser?themeId=anime">Anime</a>
+					<a href="/cc_browser?themeId=ninjaanime">Ninja Anime</a>
+					<hr />
+					<h2>Peepz</h2>
+					<a href="/cc_browser?themeId=cc2">Lil' Peepz</a>
+					<a href="/cc_browser?themeId=chibi">Chibi Peepz</a>
+					<a href="/cc_browser?themeId=ninja">Chibi Ninjas</a>
+				</nav>
+			</div>
+			<a href="/go_full" class="button_big">MAKE A VIDEO</a>
+		</nav>
+	</header>
+	
+	<body style="margin:0px">${toObjectString(attrs, params)
+		}</body><iframe style="display:none" name="dummy"></iframe>
+
+<script>
+	////
+	//// This JS contains important Video Studio stuff
+	////
+	
+	///
+	/// Variables
+	///
+	var previewPlayerTempData = "";
+	const fu = document.getElementById('fileupload'),
+		sub = document.getElementById('submit');
+
+	///
+	/// Previewer
+	///
+	function initPreviewPlayer(dataXmlStr, startFrame, containsChapter, themeList) {
+		// New variable to be used by loadPreviewer()
+		movieDataXmlStr = dataXmlStr;
+		// Movie XML
+		filmXmlStr = dataXmlStr.split("<filmxml>")[1].split("</filmxml>")[0];
+		// Show preview popup
+		document.getElementById("preview_popup_container").style.display = "block";
+		// Load the Video Previewer
+		loadPreviewer();
+	}
+	function loadPreviewer() {
+		// I think this is in case of an error??
+		if (movieDataXmlStr === null) {
+			return;
+		}
+		// I don't know
+		savePreviewData(movieDataXmlStr);
+	}
+	function savePreviewData(a) {
+		// Set temp data variable
+		previewPlayerTempData = a
+	}
+	function retrievePreviewPlayerData() {
+		// Store in separate variable
+		var recentPreviewPlayerTempData = previewPlayerTempData;
+		// Clear original variable
+		previewPlayerTempData = "";
+		// Return recent temp data
+		return recentPreviewPlayerTempData;
+	}
+
+	///
+	/// Importing
+	///
+	// Show upload window
+	function showImporter() {
+		document.getElementById("import_popup_container").style.display = "block";
+	};
+
+	///
+	/// Other stuff
+	///
+	// Redirect to Video Browser on Video Studio exit
+	function exitStudio() {
+		window.location = "/pages/html/list.html";
+	}
+	// Hide interactive tutorial
+	interactiveTutorial = {
+		neverDisplay: function() {
+			return true
+		}
+	};
+	// Hide Video Previewer popup
+	function hidePreviewer() {
+		document.getElementById("preview_popup_container").style.display = "none";
+	}
+	// Save your video with the preview window
+        function saveVideo() {
+		document.getElementById("preview_popup_container").style.display = "none";
+		document.getElementById("Studio").onExternalPreviewPlayerPublish();
+	}
+	// Hide Asset Importer popup
+	function hideImporter() {
+		document.getElementById("import_popup_container").style.display = "none";
+	}
+</script>
+<!-- Video Studio -->
+<div id="studio_holder" style="width: 960px;"><object data="https://localhost:4664/animation/414827163ad4eb60/go_full.swf" type="application/x-shockwave-flash" id="Studio" width="100%" height="100%" class="flpl_initiated"><param name="align" value="middle"><param name="allowScriptAccess" value="always"><param name="allowFullScreen" value="true"><param name="wmode" value="window"><param name="flashvars" value="movieId=&amp;loadas=0&amp;asId=&amp;originalId=&amp;apiserver=https%3A%2F%2Fwrapper-online2.herokuapp.com%2F&amp;storePath=https%3A%2F%2Flocalhost:4664%2Fstore%2F3a981f5cb2739137%2F%3Cstore%3E&amp;clientThemePath=https%3A%2F%2Flocalhost:4664%2Fstatic%2Fad44370a650793d9%2F%3Cclient_theme%3E&amp;animationPath=https%3A%2F%2Flocalhost:4664%2Fanimation%2F414827163ad4eb60%2F&amp;userId=0DyHqK6Yj9dM&amp;username=good%20bois&amp;uemail=crazy%20suitcase&amp;numContact=0&amp;ut=23&amp;ve=false&amp;isEmbed=0&amp;nextUrl=%2Fmovie%2F%3CmovieId%3E%2F0%2F1&amp;bgload=https%3A%2F%2Flocalhost:4664%2Fanimation%2Fcce25167cb1d3404%2Fgo_full.swf&amp;lid=12&amp;ctc=go&amp;themeColor=silver&amp;tlang=en_US&amp;siteId=11&amp;templateshow=false&amp;forceshow=false&amp;appCode=go&amp;lang=en&amp;tmcc=192&amp;fb_app_url=https%3A%2F%2Fwrapper-online2.herokuapp.com%2F&amp;is_published=1&amp;is_private_shared=0&amp;upl=1&amp;role=student&amp;hb=1&amp;pts=0&amp;msg_index=&amp;ad=0&amp;has_asset_bg=0&amp;has_asset_char=0&amp;initcb=studioLoaded&amp;retut=0&amp;s3base=https%3A%2F%2Fs3.amazonaws.com%2Ffs.goanimate.com%2F&amp;st=&amp;uisa=0&amp;u_info_school=OjI6a2JxQzN0MFNSKzFTYW4wTENRc01PZ2N6TURkZ0J3OWFmTzRjeW9aS3l1ak04MCtnUE5CUFo3Y0hmT0JDZndlMDlCM1V0VVVfc05pTU41cGVHYXpKOXV4YVpPZG9icHNoMHNHZmtiWjMxRnpTYlFXNDdPNHk0PQ%3D%3D&amp;tm=FIN&amp;tray=custom&amp;uplp=0&amp;isWide=1"><param name="movie" value="https://localhost:4664/animation/414827163ad4eb60/go_full.swf"></object></div>
+</div>
+<div id="import_popup_container" style="display:none">
+	<div id="import_popup">
+		<h2 id="import-an-asset">Import an Asset</h2>
+		<p class="close-button" onclick="hideImporter()">X</p>
+		<!-- Import form -->
+		<div id="import_image">
+			<form id="uploadbanner" enctype="multipart/form-data" method="post" action="/upload_asset" target="dummy">
+				<input id="fileupload" name="import" type="file" accept=".mp3,.wav,.png,.jpg">
+				<h3 id="import-as">Import As:</h3>
+				<input type="radio" value="prop" name="subtype"> Prop</input>
+				<br />
+				<input type="radio" value="background" name="subtype"> Background</input>
+				<br />
+				<input type="submit" value="Import" onclick='document.getElementById("Studio").importerUploadComplete("importerUploadComplete"); document.getElementById("import_popup_container").style.display = "none";' id="submit" class="button_import" />
+			</form>
+		</div>
+	</div>
+</div>
+<div id="preview_popup_container" style="display:none">
+	<div id="preview_popup">
+		<h2 id="preview-video">Preview Video</h2>
+		<p class="close-button" onclick="hidePreviewer()">X</p>
+		<object data="https://localhost:4664/animation/414827163ad4eb60/player.swf" type="application/x-shockwave-flash" id="preview_player">
+			<!-- The flashvars are a huge mess, have fun looking at them. :) -->
+			<param name="flashvars" value="apiserver=/&storePath=https://localhost:4664/store/3a981f5cb2739137/<store>&isEmbed=1&ctc=go&ut=60&bs=default&appCode=go&page=&siteId=go&lid=13&isLogin=Y&retut=1&clientThemePath=https://localhost:4664/static/ad44370a650793d9/<client_theme>&themeId=custom&tlang=en_US&isInitFromExternal=1&goteam_draft_only=1&isWide=1&collab=0&startFrame=previewStartFrame&autostart=1&nextUrl=/pages/html/list.html&tray=custom">
+			<param name="allowScriptAccess" value="always">
+			<param name="allowFullScreen" value="true">
+		</object>
+                <a class="button_big text-uppercase" href="#" onclick="hidePreviewer()">Back to editing</a>
+		<a class="button_big text-uppercase" href="#" onclick="saveVideo()">Save now</a>
+	</div>
+</div>
+<form enctype='multipart/form-data' action='/upload_movie' method='post'>
+	<input id='file' type="file" onchange="this.form.submit()" name='import' />
+</form>
+
+<form enctype='multipart/form-data' action='/upload_character' method='post'>
+	<input id='file2' type="file" onchange="this.form.submit()" name='import' />
+</form>
+<footer style="display:none">
+	<nav id="foot-left">
+		<a>v1.2.3½</a>
+		<a href="https://localhost:4664/faq.html">FAQ</a>
+		<a href="https://discord.gg/zGsBAtpq5m">W:O for schools server</a>
+		<a href="https://discord.gg/yhGAetN">Wrapper hub </a>
+	</nav>
+
+	<nav id="foot-right">
+		<a href="https://localhost:4664">Server Page</a>
+		<a href="https://localhost:4664/caillou.html">Caillou</a>
+	</nav>
+</footer>
