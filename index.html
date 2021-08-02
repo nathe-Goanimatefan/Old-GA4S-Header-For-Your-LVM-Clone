@@ -1,4 +1,3 @@
-<!-- this is werid. but the header hides in some browsers. hopfully a fix is possible for that. -->
 <html lang="en"><head>
 
 <meta charset="utf-8">
@@ -70,58 +69,75 @@ if (self !== top) {
 </head>
 <body class="page-action-videomaker full_screen_studio"><style> form { display: none; } </style>
 
-<header id="header">
-		<a href="/">
-			<h1 style="margin:0"><img id="logo" src="/pages/img/list_logo.png" alt="Wrapper Offline For Schools Remastered"/></h1>
-		</a>
-		<nav id="headbuttons">
-			<div class="dropdown_contain button_small">
-				<div class="dropdown_button upload_button">UPLOAD</div>
-				<nav class="dropdown_menu">
-					<a onclick="document.getElementById('file').click()">Movie</a>
-					<a onclick="document.getElementById('file2').click()">Character</a>
-				</nav>
-			</div>	
-			<div class="dropdown_contain button_small">
-				<div class="dropdown_button">CREATE A CHARACTER</div>
-				<nav class="dropdown_menu">
-					<h2>Comedy World</h2>
-					<a href="/cc?themeId=family&bs=adam">Guy (Adam)</a>
-					<a href="/cc?themeId=family&bs=eve">Girl (Eve)</a>
-					<a href="/cc?themeId=family&bs=bob">Fat (Bob)</a>
-					<a href="/cc?themeId=family&bs=rocky">Buff (Rocky)</a>
-					<hr />
-					<h2>Anime</h2>
-					<a href="/cc?themeId=anime&bs=guy">Guy</a>
-					<a href="/cc?themeId=anime&bs=girl">Girl</a>
-					<a href="/cc?themeId=ninjaanime&bs=guy">Guy (Ninja)</a>
-					<a href="/cc?themeId=ninjaanime&bs=girl">Girl (Ninja)</a>
-					<hr />
-					<h2>Peepz</h2>
-					<a href="/cc?themeId=cc2&bs=default">Lil Peepz</a>
-					<a href="/cc?themeId=chibi&bs=default">Chibi Peepz</a>
-					<a href="/cc?themeId=ninja&bs=default">Chibi Ninjas</a>
-				</nav>
-			</div>
-			<div class="dropdown_contain button_small">
-				<div class="dropdown_button">BROWSE CHARACTERS</div>
-				<nav class="dropdown_menu">
-					<h2>Comedy World</h2>
-					<a href="/cc_browser?themeId=family">Comedy World</a>
-					<hr />
-					<h2>Anime</h2>
-					<a href="/cc_browser?themeId=anime">Anime</a>
-					<a href="/cc_browser?themeId=ninjaanime">Ninja Anime</a>
-					<hr />
-					<h2>Peepz</h2>
-					<a href="/cc_browser?themeId=cc2">Lil' Peepz</a>
-					<a href="/cc_browser?themeId=chibi">Chibi Peepz</a>
-					<a href="/cc_browser?themeId=ninja">Chibi Ninjas</a>
-				</nav>
-			</div>
-			<a href="/go_full" class="button_big">MAKE A VIDEO</a>
-		</nav>
-	</header>
+<nav class="navbar site-nav" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            <a class="navbar-brand" href="/" title="Wrapper Offline for Schools Remastered">
+                <img alt="Wrapper Offline for Schools Remastered" src="/pages/img/list_logo.png">
+            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav navbar-right">
+
+		<li class="dropdown">
+                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">Upload <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a onclick="document.getElementById('file').click()">Movie</a></li>
+                        <li><a onclick="document.getElementById('file2').click()">Character</a></li>
+                    </ul>
+                </li>
+		    
+                <li class="dropdown">
+                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">Create a Character <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+			<h2>Comedy World</h2>
+                        <li><a href="/cc?themeId=family&bs=adam">Guy (Adam)</a></li>
+                        <li><a href="/cc?themeId=family&bs=eve">Girl (Eve)</a></li>
+			<li><a href="/cc?themeId=family&bs=bob">Fat (Bob)</a></li>
+			<li><a href="/cc?themeId=family&bs=rocky">Buff (Rocky)</a></li>
+                        <li class="divider"></li>
+			<h2>Anime</h2>
+                        <li><a href="/cc?themeId=anime&bs=guy">Guy</a></li>
+                        <li><a href="/cc?themeId=anime&bs=girl">Girl</a></li>
+			<li><a href="/cc?themeId=ninjaanime&bs=guy">Guy (Ninja)</a></li>
+			<li><a href="/cc?themeId=ninjaanime&bs=girl">Girl (Ninja)</a></li>
+                        <li class="divider"></li>
+			<h2>Peepz</h2>
+                        <li><a href="/cc?themeId=cc2&bs=default">Lil Peepz</a></li>
+			<li><a href="/cc?themeId=chibi&bs=default">Chibi Peepz</a></li>
+			<li><a href="/cc?themeId=ninja&bs=default">Chibi Ninjas</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">Browse Characters <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+			<h2>Comedy World</h2>
+                        <li><a href="/cc_browser?themeId=family">Comedy World</a></li>
+			<li class="divider"></li>
+			<h2>Anime</h2>
+                        <li><a href="/cc_browser?themeId=anime">Anime</a></li>
+                        <li><a href="/cc_browser?themeId=ninjaanime">Ninja Anime</a></li>
+                        <li class="divider"></li>
+			<h2>Comedy World</h2>
+                        <li><a href="/cc_browser?themeId=cc2">Lil' Peepz</a></li>
+                        <li><a href="/cc_browser?themeId=chibi">Chibi Peepz</a></li>
+			<li><a href="/cc_browser?themeId=ninja">Chibi Ninjas</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="hidden-sm hidden-md hidden-lg" href="/go_full">Make a Video</a>
+                    <span class="site-nav-btn hidden-xs"><a class="btn btn-orange" href="/go_full">Make a Video</a></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 <link rel="stylesheet" href="//goanimateforschools.github.io/fonts/schoolfont.css">
 
 
