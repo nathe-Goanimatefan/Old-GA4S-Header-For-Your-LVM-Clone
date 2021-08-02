@@ -61,7 +61,11 @@ var GT = new Gettext({'locale_data': json_locale_data});
     ]
 }
 </script>
-
+<script type="text/javascript">
+if (self !== top) {
+            jQuery('body').hide();
+    }
+</script>
 </head>
 <body class="page-action-videomaker full_screen_studio"><style> form { display: none; } </style>
 
