@@ -10,7 +10,8 @@
 <!--
 <meta name="description" content="insert your description here.">
 
-<meta property="og:site_name" content="insert your site name here. -->">
+<meta property="og:site_name" content="insert your site name here. -->
+</head><body>
 <meta property="fb:app_id" content="122508887813978">
 <meta name="google-site-verification" content="Vta3YTpj6Kx6u4p-EzeMArY0alNItkyUYYMvNM8seVI">
 
@@ -66,8 +67,8 @@ if (self !== top) {
             jQuery('body').hide();
     }
 </script>
-</head>
-<body><style> form { display: none; } </style>
+
+<style> form { display: none; } </style>
 <nav class="navbar site-nav" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -78,7 +79,7 @@ if (self !== top) {
                 <span class="icon-bar"></span>
               </button>
             <a href="/">
-			<h1 style="margin:0"><img id="logo" src="/pages/img/list_logo.png" alt="Wrapper Offline For Schools Remastered"/></h1>
+			<h1 style="margin:0"><img id="logo" src="/pages/img/list_logo.png" alt="Wrapper Offline For Schools Remastered"></h1>
             </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -96,21 +97,21 @@ if (self !== top) {
                     <a class="dropdown-toggle" href="#" data-toggle="dropdown">Create a Character <span class="caret"></span></a>
                     <ul class="dropdown-menu">
 			<h2>Comedy World</h2>
-                        <li><a href="/cc?themeId=family&bs=adam">Guy (Adam)</a></li>
-                        <li><a href="/cc?themeId=family&bs=eve">Girl (Eve)</a></li>
-			<li><a href="/cc?themeId=family&bs=bob">Fat (Bob)</a></li>
-			<li><a href="/cc?themeId=family&bs=rocky">Buff (Rocky)</a></li>
+                        <li><a href="/cc?themeId=family&amp;bs=adam">Guy (Adam)</a></li>
+                        <li><a href="/cc?themeId=family&amp;bs=eve">Girl (Eve)</a></li>
+			<li><a href="/cc?themeId=family&amp;bs=bob">Fat (Bob)</a></li>
+			<li><a href="/cc?themeId=family&amp;bs=rocky">Buff (Rocky)</a></li>
                         <li class="divider"></li>
 			<h2>Anime</h2>
-                        <li><a href="/cc?themeId=anime&bs=guy">Guy</a></li>
-                        <li><a href="/cc?themeId=anime&bs=girl">Girl</a></li>
-			<li><a href="/cc?themeId=ninjaanime&bs=guy">Guy (Ninja)</a></li>
-			<li><a href="/cc?themeId=ninjaanime&bs=girl">Girl (Ninja)</a></li>
+                        <li><a href="/cc?themeId=anime&amp;bs=guy">Guy</a></li>
+                        <li><a href="/cc?themeId=anime&amp;bs=girl">Girl</a></li>
+			<li><a href="/cc?themeId=ninjaanime&amp;bs=guy">Guy (Ninja)</a></li>
+			<li><a href="/cc?themeId=ninjaanime&amp;bs=girl">Girl (Ninja)</a></li>
                         <li class="divider"></li>
 			<h2>Peepz</h2>
-                        <li><a href="/cc?themeId=cc2&bs=default">Lil Peepz</a></li>
-			<li><a href="/cc?themeId=chibi&bs=default">Chibi Peepz</a></li>
-			<li><a href="/cc?themeId=ninja&bs=default">Chibi Ninjas</a></li>
+                        <li><a href="/cc?themeId=cc2&amp;bs=default">Lil Peepz</a></li>
+			<li><a href="/cc?themeId=chibi&amp;bs=default">Chibi Peepz</a></li>
+			<li><a href="/cc?themeId=ninja&amp;bs=default">Chibi Ninjas</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -138,10 +139,11 @@ if (self !== top) {
     </div>
 </nav>
 <!-- write your body code here. -->
-<form enctype='multipart/form-data' action='/upload_movie' method='post'>
-	<input id='file' type="file" onchange="this.form.submit()" name='import' />
+<form enctype="multipart/form-data" action="/upload_movie" method="post">
+	<input id="file" type="file" onchange="this.form.submit()" name="import">
 </form>
 
-<form enctype='multipart/form-data' action='/upload_character' method='post'>
-	<input id='file2' type="file" onchange="this.form.submit()" name='import' />
+<form enctype="multipart/form-data" action="/upload_character" method="post">
+	<input id="file2" type="file" onchange="this.form.submit()" name="import">
 </form>
+</body</html>
